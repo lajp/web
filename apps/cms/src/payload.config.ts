@@ -1,24 +1,24 @@
 import path from "path";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
+import { cloudStoragePlugin } from "@payloadcms/plugin-cloud-storage";
 import { azureBlobStorageAdapter } from "@payloadcms/plugin-cloud-storage/azure";
 import {
   AlignFeature,
-  BlockQuoteFeature,
+  BlockquoteFeature,
   BlocksFeature,
-  BoldTextFeature,
+  BoldFeature,
   HeadingFeature,
   IndentFeature,
-  InlineCodeTextFeature,
-  ItalicTextFeature,
+  InlineCodeFeature,
+  ItalicFeature,
   LinkFeature,
   OrderedListFeature,
   ParagraphFeature,
   RelationshipFeature,
-  StrikethroughTextFeature,
-  SubscriptTextFeature,
-  UnderlineTextFeature,
+  StrikethroughFeature,
+  SubscriptFeature,
+  UnderlineFeature,
   UnorderedListFeature,
   UploadFeature,
   lexicalEditor,
@@ -141,12 +141,12 @@ export default buildConfig({
   }),
   editor: lexicalEditor({
     features: [
-      BoldTextFeature(),
-      ItalicTextFeature(),
-      UnderlineTextFeature(),
-      StrikethroughTextFeature(),
-      SubscriptTextFeature(),
-      InlineCodeTextFeature(),
+      BoldFeature(),
+      ItalicFeature(),
+      UnderlineFeature(),
+      StrikethroughFeature(),
+      SubscriptFeature(),
+      InlineCodeFeature(),
       ParagraphFeature(),
       HeadingFeature({
         enabledHeadingSizes: ["h2", "h3"],
@@ -161,7 +161,7 @@ export default buildConfig({
       RelationshipFeature({
         enabledCollections: [Pages.slug, Boards.slug, Committees.slug],
       }),
-      BlockQuoteFeature(),
+      BlockquoteFeature(),
       BlocksFeature({
         blocks: [CommitteesInYear],
       }),
@@ -235,7 +235,7 @@ export default buildConfig({
         secret: process.env.PAYLOAD_SECRET ?? "",
       },
     }),
-    cloudStorage({
+    cloudStoragePlugin({
       enabled: useCloudStorage(),
       collections: {
         [Media.slug]: {

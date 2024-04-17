@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Headless CMS based on Payload",
   "license": "MIT",
+  "type": "module",
   "main": "dist/server.js",
   "scripts": {
     "build": "NODE_ENV=production pnpm copyfiles && pnpm build:payload && pnpm build:server",
@@ -20,15 +21,15 @@
   },
   "dependencies": {
     "@azure/storage-blob": "^12.18.0",
-    "@payloadcms/bundler-webpack": "^1.0.6",
-    "@payloadcms/db-mongodb": "^1.5.1",
-    "@payloadcms/plugin-cloud-storage": "^1.1.2",
-    "@payloadcms/richtext-lexical": "^0.10.0",
+    "@payloadcms/bundler-webpack": "1.0.4-beta.1",
+    "@payloadcms/db-mongodb": "3.0.0-beta.34",
+    "@payloadcms/plugin-cloud-storage": "3.0.0-beta.34",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.34",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "lodash": "^4.17.21",
     "papaparse": "^5.4.1",
-    "payload": "^2.16.1",
+    "payload": "3.0.0-beta.34",
     "payload-plugin-oauth": "^2.1.1"
   },
   "devDependencies": {

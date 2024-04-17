@@ -5,12 +5,14 @@ import type {
   BoardMember as BoardMemberType,
   CommitteeMember as CommitteeMemberType,
 } from "@tietokilta/cms-types/payload";
-import { parse } from "papaparse";
+import papa from "papaparse";
 import { type PayloadRequest } from "payload/types";
 import { CommitteeMembers } from "../collections/committees/committee-members";
 import { BoardMembers } from "../collections/board/board-members";
 import { Boards } from "../collections/board/boards";
 import type { CommitteesSlug } from "../collections/committees/committees";
+
+const { parse } = papa;
 
 interface CommitteeMember {
   title: string;
