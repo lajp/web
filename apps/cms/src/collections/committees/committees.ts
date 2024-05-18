@@ -5,7 +5,7 @@ import { signedIn } from "../../access/signed-in";
 import { guildYearField } from "../../fields/guild-year";
 import { revalidatePage } from "../../hooks/revalidate-page";
 import { getLocale } from "../../util";
-import { importController } from "../../controllers/import-controller";
+import { importCommitteeController, importCommitteePictureController } from "../../controllers/import-controller";
 
 const filterCurrentYear: FilterOptions<Committee> = ({ data }) => ({
   guildYear: {
@@ -76,7 +76,12 @@ export const Committees = {
     {
       path: "/import",
       method: "post",
-      handler: importController as PayloadHandler,
+      handler: importCommitteeController as PayloadHandler,
+    },
+    {
+      path: "/import-pictures",
+      method: "post",
+      handler: importCommitteePictureController as PayloadHandler,
     },
   ],
 } as const satisfies CollectionConfig;
